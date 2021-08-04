@@ -3,9 +3,9 @@ import 'package:recipe_app/screens/home/home_screen.dart';
 import 'package:recipe_app/screens/profile/prrofile_screen.dart';
 
 class NavItem {
-  final int id;
-  final String icon;
-  final Widget destination;
+  final int? id;
+  final String? icon;
+  final Widget? destination;
 
   NavItem({this.id, this.icon, this.destination});
 
@@ -21,9 +21,9 @@ class NavItem {
 // If we made any changes here Provider package rebuid those widget those use this NavItems
 class NavItems extends ChangeNotifier {
   // By default first one is selected
-  int selectedIndex = 0;
+  int? selectedIndex = 0;
 
-  void chnageNavIndex({int index}) {
+  void chnageNavIndex({int? index}) {
     selectedIndex = index;
     // if any changes made it notify widgets that use the value
     notifyListeners();

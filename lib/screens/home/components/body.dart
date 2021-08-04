@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
           Expanded(
             child: Padding(
               padding:
-                  EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize * 2),
+                  EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize! * 2),
               child: GridView.builder(
                 itemCount: recipeBundles.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
                   mainAxisSpacing: 20,
                   crossAxisSpacing:
                       SizeConfig.orientation == Orientation.landscape
-                          ? SizeConfig.defaultSize * 2
+                          ? SizeConfig.defaultSize! * 2
                           : 0,
                   childAspectRatio: 1.65,
                 ),

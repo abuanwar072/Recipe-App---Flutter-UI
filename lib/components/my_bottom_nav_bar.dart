@@ -7,15 +7,15 @@ import 'package:recipe_app/size_config.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double defaultSize = SizeConfig.defaultSize;
+    double? defaultSize = SizeConfig.defaultSize;
     return Consumer<NavItems>(
       builder: (context, navItems, child) => Container(
-        padding: EdgeInsets.symmetric(horizontal: defaultSize * 3), //30
+        padding: EdgeInsets.symmetric(horizontal: defaultSize! * 3), //30
         // just for demo
         // height: 80,
         decoration: BoxDecoration(
@@ -35,7 +35,7 @@ class MyBottomNavBar extends StatelessWidget {
               navItems.items.length,
               (index) => buildIconNavBarItem(
                 isActive: navItems.selectedIndex == index ? true : false,
-                icon: navItems.items[index].icon,
+                icon: navItems.items[index].icon!,
                 press: () {
                   navItems.chnageNavIndex(index: index);
                   // maybe destinationChacker is not needed in future because then all of our nav items have destination
@@ -45,7 +45,7 @@ class MyBottomNavBar extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => navItems.items[index].destination,
+                        builder: (context) => navItems.items[index].destination!,
                       ),
                     );
                 },
@@ -58,14 +58,14 @@ class MyBottomNavBar extends StatelessWidget {
   }
 
   IconButton buildIconNavBarItem(
-      {String icon, Function press, bool isActive = false}) {
+      {required String icon, Function? press, bool isActive = false}) {
     return IconButton(
       icon: SvgPicture.asset(
         icon,
         color: isActive ? kPrimaryColor : Color(0xFFD1D4D4),
         height: 22,
       ),
-      onPressed: press,
+      onPressed: press as void Function()?,
     );
   }
 }

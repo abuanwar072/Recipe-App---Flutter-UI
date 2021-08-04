@@ -29,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
             "Edit",
             style: TextStyle(
               color: Colors.white,
-              fontSize: SizeConfig.defaultSize * 1.6, //16
+              fontSize: SizeConfig.defaultSize! * 1.6, //16
               fontWeight: FontWeight.bold,
             ),
           ),
