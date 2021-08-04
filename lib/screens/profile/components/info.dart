@@ -5,16 +5,16 @@ import '../../../size_config.dart';
 
 class Info extends StatelessWidget {
   const Info({
-    Key key,
+    Key? key,
     this.name,
     this.email,
     this.image,
   }) : super(key: key);
-  final String name, email, image;
+  final String? name, email, image;
 
   @override
   Widget build(BuildContext context) {
-    double defaultSize = SizeConfig.defaultSize;
+    double defaultSize = SizeConfig.defaultSize!;
     return SizedBox(
       height: defaultSize * 24, // 240
       child: Stack(
@@ -42,12 +42,12 @@ class Info extends StatelessWidget {
                     ),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(image),
+                      image: AssetImage(image!),
                     ),
                   ),
                 ),
                 Text(
-                  name,
+                  name!,
                   style: TextStyle(
                     fontSize: defaultSize * 2.2, // 22
                     color: kTextColor,
@@ -55,7 +55,7 @@ class Info extends StatelessWidget {
                 ),
                 SizedBox(height: defaultSize / 2), //5
                 Text(
-                  email,
+                  email!,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     color: Color(0xFF8492A2),

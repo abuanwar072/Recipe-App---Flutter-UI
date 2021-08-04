@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
             name: "Jhon Doe",
             email: "Jhondoe01@gmail.com",
           ),
-          SizedBox(height: SizeConfig.defaultSize * 2), //20
+          SizedBox(height: SizeConfig.defaultSize! * 2), //20
           ProfileMenuItem(
             iconSrc: "assets/icons/bookmark_fill.svg",
             title: "Saved Recipes",

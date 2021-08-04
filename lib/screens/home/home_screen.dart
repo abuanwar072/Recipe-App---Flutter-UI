@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
         ),
         SizedBox(
           // It means 5 because by out defaultSize = 10
-          width: SizeConfig.defaultSize * 0.5,
+          width: SizeConfig.defaultSize! * 0.5,
         )
       ],
     );
